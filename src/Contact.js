@@ -1,5 +1,5 @@
 function Contact(props) {
-    let { name } = props.contact
+    const { contact: { name = "Not Found" } = {} } = props
     return (
       <span>{name}</span>
     )

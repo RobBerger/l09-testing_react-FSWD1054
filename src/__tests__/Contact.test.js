@@ -17,3 +17,8 @@ it('renders another name', () => {
     render(<Contact contact={contact} />)
     expect(screen.getByText('Jane Doe')).toBeInTheDocument()
   })
+
+  it('display "not found" when no contact is supplied', () => {
+    render(<Contact />)
+    expect(screen.getByText('Not Found')).toBeInTheDocument()
+  })
