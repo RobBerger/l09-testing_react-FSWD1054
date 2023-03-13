@@ -27,3 +27,11 @@ it('renders another name', () => {
     render(<Contact />)
     expect(screen.getByRole('button', { name: "Delete" })).toBeInTheDocument()
   })
+
+  it('displays the alert when the delete button is clicked', () => {
+    window.alert = jest.fn()
+    render(<Contact />)
+    const button = screen.getByRole('button', { name: "Delete" })
+    fireEvent.click(button)
+    expect(window.alert).toHaveBeenCalledTimes(1)
+  })
