@@ -11,3 +11,9 @@ it('renders the name', () => {
     render(<Contact contact={contact} />)
     expect(screen.getByText('John Doe')).toBeInTheDocument()
 })
+
+it('renders another name', () => {
+    let contact = { name: "Jane Doe" }
+    render(<Contact contact={contact} />)
+    expect(screen.getByText('Jane Doe')).toBeInTheDocument()
+  })
