@@ -22,3 +22,8 @@ it('renders another name', () => {
     render(<Contact />)
     expect(screen.getByText('Not Found')).toBeInTheDocument()
   })
+
+  it('renders a "delete" button', () => {
+    render(<Contact />)
+    expect(screen.getByRole('button', { name: "Delete" })).toBeInTheDocument()
+  })
