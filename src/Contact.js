@@ -1,8 +1,7 @@
-function Contact() {
+function Contact(props) {
+    let { name } = props.contact
     return (
-      <>
-      <span>John Doe</span>
-      </>
+      <span>{name}</span>
     )
   }
   export default Contact
