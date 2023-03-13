@@ -30,3 +30,12 @@ afterEach(() => {
       expect(screen.getByText('This page was rendered on 1/1/2021, 12:00:00 AM')).toBeInTheDocument()
     })
   })
+
+  it('should match the snapshot', () => {
+    const spy = jest.spyOn(Date, 'now')
+      .mockImplementation(() => new Date('2021-01-01T00:00')
+    )
+    const { asFragment } = render(<Welcome />)
+    const html = asFragment()
+    expect(html).toMatchSnapshot()
+  })
